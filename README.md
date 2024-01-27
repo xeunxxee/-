@@ -2,4 +2,4 @@
 
 by xeunxxee
 
-HTML & CSS are so much fun!!
+HTML & CSS are so much fun with Doohee and Yongwoo!!
