@@ -6,7 +6,7 @@
 }
 .chat-screen {
     padding: 15px 15px 0px 15px;
-
+    padding-bottom: 50px;
 }
 
 /* chat-header */
@@ -151,16 +151,18 @@
 
 /* reply */
 .reply {
-    position:fixed;
-    bottom:0;
-    width:100%;
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    width: 100%;
     background-color: white;
     display: flex;
     justify-content: space-between;
-    align-items:center;
-    padding:5px 10px;
+    align-items: center;
+    padding: 5px 10px;
     box-sizing: border-box;
     transition: all .3s ease-in-out;
+    z-index: 2;
 }
 
 .reply__column:first-child{
