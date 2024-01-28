@@ -115,6 +115,40 @@
     border-top-right-radius: 0;
 }
 
+.chat-message {
+    display: flex;
+    align-items: center;
+  }
+  
+  .article-image {
+    max-width: 100px; /* 이미지 최대 너비 조절 */
+    margin-right: 10px; /* 이미지와 텍스트 사이 여백 */
+  }
+  
+  .message-text {
+    margin: 0; /* 기본 마진 제거 */
+  }
+  .message-wrapper {
+    
+    background-color: white;
+    font-size: 15px;
+    border-radius: 15px;
+    border-top-left-radius: 0;
+    padding:10px;
+    margin: 7px 0px 0px 0px;
+    display: flex;
+  }
+  
+  .current-message,
+  .future-message {
+    flex: 1;
+    padding: 8px; /* 내용과 텍스트 간격을 조절할 수 있습니다. */
+  }
+  
+  .future-message {
+    text-align: right; /* 미래에 대한 내용을 오른쪽 정렬합니다. */
+  }
+
 /* reply */
 .reply {
     position:fixed;
