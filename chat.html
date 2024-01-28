@@ -52,6 +52,10 @@
             </p>
           </div>
         </div>
+      </div>
+      
+      <div class="chat-row">
+        <img class="chat-row-img-hidden" src="img/cats1.png"/>
         <div class="chat-row-text">
           <div class="chat-row-info">
             <p class="chat-row-messege">
@@ -64,7 +68,6 @@
           </div>
         </div>
       </div>
-
 
       <div class="chat-row row--me">
         <div class="chat-row-text">
@@ -84,6 +87,7 @@ function buttonClickHandler(event) {
   // 새로운 div 생성
   const newDiv = document.createElement('div');
   newDiv.classList.add('chat-row');
+  
 
   // 이미지 요소 생성 및 속성 설정
   const newImg = document.createElement('img');
@@ -150,9 +154,46 @@ function buttonClickHandler(event) {
   newDiv.appendChild(newImg);
   newDiv.appendChild(newRowText);
 
+
+
+// 이하 내용은 현법률, 개정안 용의 두번쨰 div입니다
+
   // chat-screen 요소에 새로운 div 추가
   const chatScreen = event.currentTarget.closest('.chat-screen');
   chatScreen.appendChild(newDiv);
+
+  // 새로운 div 생성 (두 번째 div)
+const newDiv2 = document.createElement('div');
+newDiv2.classList.add('chat-row');
+
+// 이미지 요소 생성 및 속성 설정 (두 번째 div)
+const newImg2 = document.createElement('img');
+newImg2.classList.add('chat-row-img-hidden');
+newImg2.src = 'img/cats1.png';
+
+// chat-row-text 요소 생성 (두 번째 div)
+const newRowText2 = document.createElement('p');
+newRowText2.classList.add('chat-row-messege');
+
+// 첫 번째 <p> 요소 생성
+const firstParagraph = document.createElement('p');
+firstParagraph.textContent = '첫 번째 메시지';
+
+// 두 번째 <p> 요소 생성
+const secondParagraph = document.createElement('p');
+secondParagraph.textContent = '두 번째 메시지';
+
+// chat-row-text 요소에 <p> 요소들 추가
+newRowText2.appendChild(firstParagraph);
+newRowText2.appendChild(secondParagraph);
+
+// 새로운 div에 이미지 요소와 chat-row-text 요소 추가 (두 번째 div)
+newDiv2.appendChild(newImg2);
+newDiv2.appendChild(newRowText2);
+
+// chat-screen 요소에 두 번째 div 추가
+chatScreen.appendChild(newDiv2);
+
 }
 
 // 모든 버튼에 클릭 이벤트 추가
@@ -160,13 +201,7 @@ buttons.forEach(button => {
   button.addEventListener('click', buttonClickHandler);
 });
 
-
 </script>
-
-      
-
-
-
     </main>
 
     <form class="reply">
