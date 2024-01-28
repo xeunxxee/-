@@ -247,3 +247,11 @@
 .reply:focus-within {
     transform: translateY(80px);
 }
+
+
+/*공모전용 수정 */
+.chat-row-messege-vote {
+    border: none; /* 윤곽선 제거 */
+    background-color: white; /* 배경을 흰색으로 설정 */
+  }
+  
