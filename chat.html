@@ -29,7 +29,7 @@
         <a href="chats.html"><i class="fa-solid fa-chevron-left fa-lg"></i>
       </div></a>
       <div class="chat-header-column">
-        <h1 class="screen-header_title">한두희</h1>
+        <h1 class="screen-header_title">오늘의 이슈, 오늘의 개정</h1>
       </div>
       <div class="chat-header-column">
         <span><i class="fa-solid fa-magnifying-glass fa-lg"></i></span>
@@ -41,44 +41,101 @@
       <div class="chat-date-box">
         <a class="chat-date">Sunday, January, 2023</a>
       </div>
-    
-      <div class="chat-row">
-        <img class="chat-row-img" src="img/cats1.png"/>
-        <div class="chat-row-text">
-          <p class="chat-row-name">한두희</p>
-          <div class="chat-row-info">
-            <p class="chat-row-messege">
-              <img class="article-image"src="img/승희.jpg" alt="Attached Image" />
-              항공기 뭐시기 
-              <br/>
-              <a href="https://naver.com" target="_blank">자세한 기사 보러가기</a>
-            </p>
-            <p class="chat-row-time">19:58</p>
-          </div>
-        </div>
-      </div>
 
       <div class="chat-row">
         <img class="chat-row-img" src="img/cats1.png"/>
         <div class="chat-row-text">
-          <p class="chat-row-name">한두희</p>
+          <p class="chat-row-name">오늘의 이슈, 오늘의 개정</p>
           <div class="chat-row-info">
-            <div class="message-wrapper">
-              <div class="message current-message">
-                <p class="message-text">현재법 어쩌구</p>
-                
-              </div>
-              <div class="message future-message">
-                <p class="message-text">미래에 대한 내</p>
-              
-              </div>
-              
-            </div>
-            <p class="chat-row-time">20:00</p>
+            <p class="chat-row-messege">
+              금주의 이슈를 알려드립니다!
+            </p>
+          </div>
+        </div>
+        <div class="chat-row-text">
+          <div class="chat-row-info">
+            <p class="chat-row-messege">
+              <button class="chat-row-messege-vote">마약</button>
+              <button class="chat-row-messege-vote">항공기</button>
+              <button class="chat-row-messege-vote">마약</button>
+              <button class="chat-row-messege-vote">마약</button>
+            </p>
+            <p class="chat-row-time">9:00</p>
           </div>
         </div>
       </div>
+
+
+      <div class="chat-row row--me">
+        <div class="chat-row-text">
+          <div class="chat-row-info">
+            <p class="chat-row-time">9:00</p>
+            <p class="chat-row-messege messege--by-me">궁금한 이슈의 키워드를 눌러보세요!</p>
+          </div>
+        </div>
+      </div> 
+      
+<script>
+  // 각 버튼을 가져오기
+  const buttons = document.querySelectorAll('.chat-row-messege-vote');
+
+  // 버튼을 클릭했을 때 실행될 함수
+  function buttonClickHandler() {
+    // 새로운 div 생성
+    const newDiv = document.createElement('div');
+    newDiv.classList.add('chat-row');
+
+    // 이미지 요소 생성 및 속성 설정
+    const newImg = document.createElement('img');
+    newImg.classList.add('chat-row-img');
+    newImg.src = 'img/cats1.png';
+
+    // chat-row-text 요소 생성
+    const newRowText = document.createElement('div');
+    newRowText.classList.add('chat-row-text');
+
+    // 이름 요소 생성
+    const newName = document.createElement('p');
+    newName.classList.add('chat-row-name');
+    newName.textContent = '오늘의 이슈, 오늘의 개정';
+
+    // 내용 요소 생성
+    const newContent = document.createElement('div');
+    newContent.classList.add('chat-row-info');
+
+    // 메시지 요소 생성
+    const newMessage = document.createElement('p');
+    newMessage.classList.add('chat-row-messege');
+    newMessage.textContent = '이슈내용';
+
+    // 내용 요소에 메시지 요소 추가
+    newContent.appendChild(newMessage);
+
+    // chat-row-text 요소에 이름 요소와 내용 요소 추가
+    newRowText.appendChild(newName);
+    newRowText.appendChild(newContent);
+
+    // 새로운 div에 이미지 요소와 chat-row-text 요소 추가
+    newDiv.appendChild(newImg);
+    newDiv.appendChild(newRowText);
+
+    // chat-screen 요소에 새로운 div 추가
+    const chatScreen = this.closest('.chat-screen');
+    chatScreen.appendChild(newDiv);
+  }
+
+  // 모든 버튼에 클릭 이벤트 추가
+  buttons.forEach(button => {
+    button.addEventListener('click', buttonClickHandler);
+  });
+</script>
+
+      
+
+
+
     </main>
+
     <form class="reply">
       <div class="reply__column">
         <i class="fa-regular fa-square-plus fa-lg"></i>
@@ -101,3 +158,4 @@
     ></script>
   </body>
 </html>
+
