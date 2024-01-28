@@ -80,6 +80,15 @@
     border-radius: 18px;
     margin-right: 10px;
 }
+
+.chat-row-img-hidden {
+    width: 45px;
+    height: 45px;
+    border-radius: 18px;
+    margin-right: 10px;
+    visibility: hidden;      
+}
+
 .chat-row-name,
 .chat-row-time {
     font-size: 12px;
@@ -220,7 +229,7 @@
     to {opacity: 1;}
 }
 
-.chat-row:last-child {
+.chat-row {
     animation:0.8s fade-in-from-bottom ease-in-out forwards;
 }
 
