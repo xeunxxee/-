@@ -265,4 +265,40 @@
     border: none; /* 윤곽선 제거 */
     background-color: white; /* 배경을 흰색으로 설정 */
   }
+
+/*버튼세개*/
+/* fixed-buttons */
+.fixed-buttons {
+    position: fixed;
+    bottom: 70px; /* 채팅 입력창 바로 위에 위치하도록 조정 */
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around; /* 버튼들을 좌측, 가운데, 우측으로 정렬 */
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 3; /* 다른 요소들 위에 나타나도록 설정 */
+}
+
+.fixed-button {
+    padding: 10px;
+    background-color: #4CAF50; /* 버튼 배경색 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s; /* 배경색 변화에 애니메이션 추가 */
+}
+
+.fixed-button:hover {
+    background-color: #45a049; /* 마우스 호버 시 배경색 변화 */
+}
+
+/* chat-screen adjustment for space */
+.chat-screen {
+    margin-bottom: 100px; /* 버튼이 위치한 부분만큼 여유 공간을 주어 스크롤을 내려도 채팅창이 가려지지 않게 함 */
+}
+
+/*패딩조절들 아직 안함*/
   
