@@ -59,9 +59,9 @@
         <div class="chat-row-text">
           <div class="chat-row-info">
             <p class="chat-row-messege">
-              <button class="chat-row-messege-vote">마약</button>
+              <button class="chat-row-messege-vote" id="vote-dog">개</button>
               <button class="chat-row-messege-vote" id="vote-airplane">항공기</button>
-              <button class="chat-row-messege-vote">마약</button>
+              <button class="chat-row-messege-vote" id="vote-import">수입</button>
               <button class="chat-row-messege-vote">마약</button>
             </p>
             <p class="chat-row-time">9:00</p>
@@ -77,6 +77,12 @@
           </div>
         </div>
       </div> 
+      
+      <div class="fixed-buttons">
+        <button class="fixed-button" onclick="createMessage('left')">좌측 버튼</button>
+        <button class="fixed-button" onclick="createMessage('center')">가운데 버튼</button>
+        <button class="fixed-button" onclick="createMessage('right')">우측 버튼</button>
+      </div>
       
 <script>
     // 각 버튼을 가져오기
@@ -134,6 +140,50 @@ function buttonClickHandler(event) {
       // 내용 요소에 메시지 요소 추가
       newContent.appendChild(newMessage);
       break;
+      case 'vote-dog':
+      // "개" 버튼일 경우의 처리
+      // 이미지 요소 생성
+      const newArticleImagedog = document.createElement('img');
+      newArticleImagedog.classList.add('article-image');
+      newArticleImagedog.src = 'img/댕댕이.jpg';
+      newArticleImagedog.alt = 'Attached Image';
+
+      // 메시지 요소 생성
+      const newMessageDog = document.createElement('p');
+      newMessageDog.classList.add('chat-row-messege');
+      newMessageDog.innerHTML = `
+        ${newArticleImagedog.outerHTML}
+        개가 어쩌구 저쩌구
+        <br/>
+        <a href="https://naver.com" target="_blank">자세한 기사 보러가기</a>
+      `;
+
+      // 내용 요소에 메시지 요소 추가
+      newContent.appendChild(newMessageDog);
+      break;
+
+      case 'vote-import':
+      // "수입" 버튼일 경우의 처리
+      // 이미지 요소 생성
+      const newArticleImageimport = document.createElement('img');
+      newArticleImageimport.classList.add('article-image');
+      newArticleImageimport.src = 'img/치즈.jpg';
+      newArticleImageimport.alt = 'Attached Image';
+
+      // 메시지 요소 생성
+      const newMessageimport = document.createElement('p');
+      newMessageimport.classList.add('chat-row-messege');
+      newMessageimport.innerHTML = `
+        ${newArticleImageimport.outerHTML}
+        수입 영양소 문제있다
+        <br/>
+        <a href="https://naver.com" target="_blank">자세한 기사 보러가기</a>
+      `;
+
+      // 내용 요소에 메시지 요소 추가
+      newContent.appendChild(newMessageimport);
+      break;
+      
 
     // 다른 버튼에 대한 동작을 추가하려면 아래에 case를 계속해서 작성하면 됩니다.
 
@@ -218,6 +268,40 @@ buttons.forEach(button => {
 
     </form>
 
+    <script>
+      // 3버튼기능을 위한 함수
+      function createMessage(button) {
+        const chatScreen = document.querySelector('.chat-screen');
+        const newDiv = document.createElement('div');
+        newDiv.classList.add('chat-row');
+
+        const newImg = document.createElement('img');
+        newImg.classList.add('chat-row-img-hidden');
+        newImg.src = 'img/cats1.png';
+
+        const newRowText = document.createElement('p');
+        newRowText.classList.add('chat-row-messege');
+
+        switch (button) {
+          case 'left':
+            newRowText.textContent = '왼쪽버튼~.';
+            break;
+
+          case 'center':
+            newRowText.textContent = '가운데 버튼~.';
+            break;
+
+          case 'right':
+            newRowText.textContent = '오른쪽 버튼~.';
+            break;
+        }
+
+        newDiv.appendChild(newImg);
+        newDiv.appendChild(newRowText);
+        chatScreen.appendChild(newDiv);
+      }
+    </script>
+    
     <script
       src="https://kit.fontawesome.com/e14cec3ae0.js"
       crossorigin="anonymous"
