@@ -83,8 +83,28 @@
         <button class="fixed-button" onclick="createMessage('center')">가운데 버튼</button>
         <button class="fixed-button" onclick="createMessage('right')">우측 버튼</button>
       </div>
-      
+
+  
 <script>
+  // 투표 버튼 클릭 이벤트 핸들러 함수
+   function voteButtonClickHandler(event) {
+        const selectedOption = event.currentTarget.textContent; // 클릭한 버튼의 텍스트(보기 1, 보기 2, 보기 3)
+        const chatScreen = event.currentTarget.closest('.chat-screen');
+        const newDiv = document.createElement('div');
+        newDiv.classList.add('chat-row');
+
+        const newImg = document.createElement('img');
+        newImg.classList.add('chat-row-img-hidden');
+        newImg.src = 'img/cats1.png';
+
+        const newRowText = document.createElement('p');
+        newRowText.classList.add('chat-row-messege');
+        newRowText.textContent = `투표가 완료되었습니다! 선택한 옵션: ${selectedOption}`;
+
+        newDiv.appendChild(newImg);
+        newDiv.appendChild(newRowText);
+        chatScreen.appendChild(newDiv);
+    }
     // 각 버튼을 가져오기
 const buttons = document.querySelectorAll('.chat-row-messege-vote');
 
@@ -284,22 +304,51 @@ buttons.forEach(button => {
 
         switch (button) {
           case 'left':
-            newRowText.textContent = '왼쪽버튼~.';
+            newRowText.textContent = '오늘의 이슈';
             break;
 
           case 'center':
-            newRowText.textContent = '가운데 버튼~.';
+            newRowText.textContent = '함께 논의';
             break;
 
           case 'right':
-            newRowText.textContent = '오른쪽 버튼~.';
+              newRowText.innerHTML = `
+                <p class="chat-row-messege">투표하세요:</p>
+                <div class="chat-row-info">
+                    <button class="chat-row-messege-vote" id="voteOption1">보기 1</button>
+                    <button class="chat-row-messege-vote" id="voteOption2">보기 2</button>
+                    <button class="chat-row-messege-vote" id="voteOption3">보기 3</button>
+                </div>
+            `;
+            // 각 투표 버튼에 클릭 이벤트 추가
+            newRowText.querySelectorAll('.chat-row-messege-vote').forEach(button => {
+                button.addEventListener('click', voteButtonClickHandler);
+            });
             break;
-        }
+    }
 
         newDiv.appendChild(newImg);
         newDiv.appendChild(newRowText);
         chatScreen.appendChild(newDiv);
       }
+      
+function voteButtonClickHandler(event) {
+    const selectedOption = event.currentTarget.textContent; // 클릭한 버튼의 텍스트(보기 1, 보기 2, 보기 3)
+    const chatScreen = event.currentTarget.closest('.chat-screen');
+    const newDiv = document.createElement('div');
+    newDiv.classList.add('chat-row');
+
+    const newImg = document.createElement('img');
+    newImg.classList.add('chat-row-img-hidden');
+    newImg.src = 'img/cats1.png';
+
+    const newRowText = document.createElement('p');
+    newRowText.classList.add('chat-row-messege');
+    newRowText.textContent = `투표가 완료되었습니다! 선택한 옵션: ${selectedOption}`;
+
+    newDiv.appendChild(newImg);
+    newDiv.appendChild(newRowText);
+    chatScreen.appendChild(newDiv);
     </script>
     
     <script
