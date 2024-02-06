@@ -262,8 +262,71 @@ newDiv2.appendChild(newRowText2);
 
 // chat-screen 요소에 두 번째 div 추가
 chatScreen.appendChild(newDiv2);
+  
+if (event.currentTarget.id === 'dog') {
+    const dogcongressDiv = document.createElement('div');
+    dogcongressDiv.classList.add('chat-row');
 
+    const dogcongressText = document.createElement('p');
+    dogcongressText.classList.add('chat-row-messege');
+
+        // 개관련 국회의원 텍스트와 함께 링크 추가
+    const dogcongressLink = document.createElement('a');
+    dogcongressLink.href = 'https://www.assembly.go.kr/portal/assm/assmMemb/memberProfile.do?monaCd=14M56632&st=21&viewType=CONTBODY'; // 링크 주소를 지정하세요
+    dogcongressLink.target = '_blank'; // 새 탭에서 링크 열기
+    dogcongressLink.textContent = '개관련 국회의원 자세히 보기';
+    dogcongressText.classList.add('chat-row-messege');
+
+    // 링크를 말풍선에 추가
+    dogcongressText.appendChild(dogcongressLink);
+
+    dogcongressDiv.appendChild(dogcongressText);
+    chatScreen.appendChild(dogcongressDiv);
+  }
+
+  if (event.currentTarget.id === 'airplane') {
+    const airplanecongressDiv = document.createElement('div');
+    airplanecongressDiv.classList.add('chat-row');
+
+    const airplanecongressText = document.createElement('p');
+    airplanecongressText.classList.add('chat-row-messege');
+
+ // 개관련 국회의원 텍스트와 함께 링크 추가
+ const airplanecongressLink = document.createElement('a');
+ airplanecongressLink.href = 'https://www.assembly.go.kr/portal/assm/assmMemb/memberProfile.do?monaCd=14M56632&st=21&viewType=CONTBODY'; // 링크 주소를 지정하세요
+ airplanecongressLink.target = '_blank'; // 새 탭에서 링크 열기
+ airplanecongressLink.textContent = '항공기 관련 국회의원 자세히 보기';
+ airplanecongressText.classList.add('chat-row-messege');
+
+    // 링크를 말풍선에 추가
+    airplanecongressText.appendChild(airplanecongressLink);
+
+
+    airplanecongressDiv.appendChild(airplanecongressText);
+    chatScreen.appendChild(airplanecongressDiv);
+  }
+
+  if (event.currentTarget.id === 'import') {
+    const importcongressDiv = document.createElement('div');
+    importcongressDiv.classList.add('chat-row');
+
+    const importcongressText = document.createElement('p');
+    importcongressText.classList.add('chat-row-messege');
+ 
+    // 개관련 국회의원 텍스트와 함께 링크 추가
+    const importcongressLink = document.createElement('a');
+    importcongressLink.href = 'https://www.assembly.go.kr/portal/assm/assmMemb/memberProfile.do?monaCd=14M56632&st=21&viewType=CONTBODY'; // 링크 주소를 지정하세요
+    importcongressLink.target = '_blank'; // 새 탭에서 링크 열기
+    importcongressLink.textContent = '수입 관련 국회의원 자세히 보기';
+    importcongressText.classList.add('chat-row-messege');
+
+    // 링크를 말풍선에 추가
+    importcongressText.appendChild(importcongressLink);
+
+    importcongressDiv.appendChild(importcongressText);
+    chatScreen.appendChild(importcongressDiv);
 }
+
 
 // 모든 버튼에 클릭 이벤트 추가
 buttons.forEach(button => {
