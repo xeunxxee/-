@@ -59,9 +59,9 @@
         <div class="chat-row-text">
           <div class="chat-row-info">
             <p class="chat-row-messege">
-              <button class="chat-row-messege-vote" id="vote-dog">개</button>
-              <button class="chat-row-messege-vote" id="vote-airplane">항공기</button>
-              <button class="chat-row-messege-vote" id="vote-import">수입</button>
+              <button class="chat-row-messege-vote" id="dog">개</button>
+              <button class="chat-row-messege-vote" id="airplane">항공기</button>
+              <button class="chat-row-messege-vote" id="import">수입</button>
                          </p>
             <p class="chat-row-time">9:00</p>
           </div>
@@ -138,7 +138,7 @@ function buttonClickHandler(event) {
 
   // 각 버튼의 ID를 확인하여 동작 수행
   switch (event.currentTarget.id) {
-    case 'vote-airplane':
+    case 'airplane':
       // "항공기" 버튼일 경우의 처리
       // 이미지 요소 생성
       const newArticleImage = document.createElement('img');
@@ -159,7 +159,7 @@ function buttonClickHandler(event) {
       // 내용 요소에 메시지 요소 추가
       newContent.appendChild(newMessage);
       break;
-      case 'vote-dog':
+      case 'dog':
       // "개" 버튼일 경우의 처리
       // 이미지 요소 생성
       const newArticleImagedog = document.createElement('img');
@@ -181,7 +181,7 @@ function buttonClickHandler(event) {
       newContent.appendChild(newMessageDog);
       break;
 
-      case 'vote-import':
+      case 'import':
       // "수입" 버튼일 경우의 처리
       // 이미지 요소 생성
       const newArticleImageimport = document.createElement('img');
