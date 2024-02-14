@@ -301,6 +301,7 @@
 /* chat-screen adjustment for space */
 .chat-screen {
     margin-bottom: 100px; /* 버튼이 위치한 부분만큼 여유 공간을 주어 스크롤을 내려도 채팅창이 가려지지 않게 함 */
+    padding-bottom: 100px
 }
 
 
