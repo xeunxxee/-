@@ -153,13 +153,13 @@ function buttonClickHandler(event) {
       // "항공기" 버튼일 경우의 처리
       // 링크 요소 생성
       const linkElementairplane = document.createElement('a');
-      linkElementairplane.href = 'https://naver.com'; // 링크 주소 설정
+      linkElementairplane.href = 'https://www.seoul.co.kr/news/newsView.php?id=20231123500112'; // 링크 주소 설정
       linkElementairplane.target = '_blank'; // 새 탭에서 링크 열기
 
       // 이미지 요소 생성
       const newArticleImageairplane = document.createElement('img');
       newArticleImageairplane.classList.add('article-image');
-      newArticleImageairplane.src = 'img/승희.jpg';
+      newArticleImageairplane.src = 'img/drug (2).png';
       newArticleImageairplane.alt = 'Attached Image';
 
       // 링크 요소에 이미지 요소 추가
@@ -174,7 +174,7 @@ function buttonClickHandler(event) {
 
       // 텍스트 요소 생성 및 설정
       const textElementairplane = document.createElement('span');
-      textElementairplane.textContent = ' 항공기 뭐시기'; // 텍스트 내용 설정
+      textElementairplane.textContent = ' 항공기 기사요약'; // 텍스트 내용 설정
       textElementairplane.style.marginLeft = '10px'; // 이미지와 텍스트 간 간격 조정
 
       // 메시지 컨테이너에 텍스트 요소 추가
@@ -182,21 +182,109 @@ function buttonClickHandler(event) {
 
       // 내용 요소에 메시지 컨테이너 추가
       newContent.appendChild(messageContainerairplane);
-      break;
+     
+       // 메시지를 포함할 컨테이너 생성
+       const messageContainer3 = document.createElement('div');
+      messageContainer3.classList.add('chat-row');
+
+      // '현법률' 메시지와 이미지를 포함할 div 생성
+      const firstMessageContainer3 = document.createElement('div');
+      firstMessageContainer3.classList.add('chat-row-messege-container'); // 새로운 클래스
+
+      // '현법률' 메시지 생성
+      const firstMessageText3 = document.createElement('p');
+      firstMessageText3.classList.add('chat-row-messege');
+      firstMessageText3.textContent = '현법률';
+
+      // '현법률' 메시지용 이미지 생성
+      const firstMessageImg3 = document.createElement('img');
+      firstMessageImg3.classList.add('chat-row-img-hidden');
+      firstMessageImg3.src = 'img/cats1.png';
+
+      // '현법률' 메시지와 이미지를 컨테이너에 추가
+      firstMessageContainer3.appendChild(firstMessageImg3);
+      firstMessageContainer3.appendChild(firstMessageText3);
+
+      // '개정안' 메시지 생성 (바로 오른쪽에 위치)
+      const secondMessageText3 = document.createElement('p');
+      secondMessageText3.classList.add('chat-row-messege', 'second-message'); // 'second-message' 클래스 추가
+      secondMessageText3.textContent = "개정안";
+
+      // 메시지 컨테이너에 첫 번째와 두 번째 메시지 컨테이너 추가
+      messageContainer3.appendChild(firstMessageContainer3);
+      messageContainer3.appendChild(secondMessageText3);
+
+// '국회의원 모아보기' 채팅 메시지의 컨테이너 생성
+const lawmakerMessageContainer3 = document.createElement('div');
+lawmakerMessageContainer3.classList.add('chat-row'); // 채팅 행 스타일 적용
+
+// 프로필 이미지 추가
+const profileImage3 = document.createElement('img');
+profileImage3.src = 'img/cats1.png'; // 프로필 이미지 경로
+profileImage3.classList.add('chat-row-img-hidden'); // 이미지 스타일 적용
+
+// 말풍선 컨테이너 생성 및 스타일 적용
+const lawmakerBubbleContainer3 = document.createElement('div');
+lawmakerBubbleContainer3.classList.add('chat-row-messege'); // 말풍선 스타일 적용
+lawmakerBubbleContainer3.style.display = 'flex';
+lawmakerBubbleContainer3.style.flexDirection = 'column';
+lawmakerBubbleContainer3.style.alignItems = 'flex-start'; // 내용을 왼쪽 정렬
+
+// '국회의원 모아보기' 제목 추가
+const lawmakerTitleText3 = document.createElement('p');
+lawmakerTitleText3.textContent = '국회의원 모아보기';
+lawmakerBubbleContainer3.appendChild(lawmakerTitleText3);
+
+// 사진과 설명 추가
+const items3 = [
+  { imgSrc: 'img/channel.jpg', text: '사진1 설명', link: 'https://example.com/link1' },
+  { imgSrc: 'img/channel.jpg', text: '사진2 설명', link: 'https://example.com/link2' },
+  { imgSrc: 'img/channel.jpg', text: '사진3 설명', link: 'https://example.com/link3' }
+];
+
+items3.forEach(item => {
+  const itemLink3 = document.createElement('a');
+  itemLink3.href = item.link2;
+  itemLink3.target = '_blank';
+  itemLink3.style.display = 'flex';
+  itemLink3.style.alignItems = 'center';
+
+  const itemImg3 = document.createElement('img');
+  itemImg3.src = item.imgSrc;
+  itemImg3.alt = item.text;
+  itemImg3.style.width = '50px'; // 이미지 크기 조절
+  itemImg3.style.marginRight = '10px'; // 이미지와 텍스트 사이 간격
+  itemLink3.appendChild(itemImg3);
+
+  const itemText3 = document.createElement('p');
+  itemText3.textContent = item.text;
+  itemLink3.appendChild(itemText3);
+
+  lawmakerBubbleContainer3.appendChild(itemLink3);
+});
+
+// 프로필 이미지와 말풍선 컨테이너를 메인 컨테이너에 추가
+lawmakerMessageContainer3.appendChild(profileImage3);
+lawmakerMessageContainer3.appendChild(lawmakerBubbleContainer3);
+
+// 채팅창에 메인 컨테이너 추가
+chatScreen.appendChild(messageContainer3);
+chatScreen.appendChild(lawmakerMessageContainer3);  
+
+  break;
      
       
       case 'dog':
-      console.log("'개' 버튼 클릭됨"); // 디버깅을 위한 로그
       // "개" 버튼일 경우의 처리
       // 링크 요소 생성
       const linkElementdog = document.createElement('a');
-      linkElementdog.href = 'https://naver.com'; // 링크 주소 설정
+      linkElementdog.href = 'https://news.kbs.co.kr/news/pc/view/view.do?ncd=7866636'; // 링크 주소 설정
       linkElementdog.target = '_blank'; // 새 탭에서 링크 열기
 
       // 이미지 요소 생성
       const newArticleImagedog = document.createElement('img');
       newArticleImagedog.classList.add('article-image');
-      newArticleImagedog.src = 'img/승희.jpg';
+      newArticleImagedog.src = 'img/dog2.png';
       newArticleImagedog.alt = 'Attached Image';
 
       // 링크 요소에 이미지 요소 추가
@@ -211,7 +299,7 @@ function buttonClickHandler(event) {
 
       // 텍스트 요소 생성 및 설정
       const textElementdog = document.createElement('span');
-      textElementdog.textContent = 'ㅇㅇㅇw '; // 텍스트 내용 설정
+      textElementdog.textContent = '강아지 기사 요약'; // 텍스트 내용 설정
       textElementdog.style.marginLeft = '10px'; // 이미지와 텍스트 간 간격 조정
 
       // 메시지 컨테이너에 텍스트 요소 추가
@@ -225,44 +313,55 @@ function buttonClickHandler(event) {
       const messageContainer = document.createElement('div');
       messageContainer.classList.add('chat-row');
 
-      // '글씨1' 메시지와 이미지를 포함할 div 생성
+      // '현법률' 메시지와 이미지를 포함할 div 생성
       const firstMessageContainer = document.createElement('div');
       firstMessageContainer.classList.add('chat-row-messege-container'); // 새로운 클래스
 
-      // '글씨1' 메시지 생성
+      // '현법률' 메시지 생성
       const firstMessageText = document.createElement('p');
       firstMessageText.classList.add('chat-row-messege');
-      firstMessageText.textContent = '글씨1';
+      firstMessageText.textContent = '현법률';
 
-      // '글씨1' 메시지용 이미지 생성
+      // '현법률' 메시지용 이미지 생성
       const firstMessageImg = document.createElement('img');
-      firstMessageImg.classList.add('chat-row-img');
+      firstMessageImg.classList.add('chat-row-img-hidden');
       firstMessageImg.src = 'img/cats1.png';
 
-      // '글씨1' 메시지와 이미지를 컨테이너에 추가
+      // '현법률' 메시지와 이미지를 컨테이너에 추가
       firstMessageContainer.appendChild(firstMessageImg);
       firstMessageContainer.appendChild(firstMessageText);
 
-      // '글씨1'' 메시지 생성 (바로 오른쪽에 위치)
+      // '개정안' 메시지 생성 (바로 오른쪽에 위치)
       const secondMessageText = document.createElement('p');
       secondMessageText.classList.add('chat-row-messege', 'second-message'); // 'second-message' 클래스 추가
-      secondMessageText.textContent = "글씨1'";
+      secondMessageText.textContent = "개정안";
 
       // 메시지 컨테이너에 첫 번째와 두 번째 메시지 컨테이너 추가
       messageContainer.appendChild(firstMessageContainer);
       messageContainer.appendChild(secondMessageText);
 
- // '국회의원 모아보기' 채팅 메시지 컨테이너
-const additionalMessage2 = document.createElement('div');
-additionalMessage2.classList.add('chat-row-messege'); // 채팅 메시지 스타일 적용
+// '국회의원 모아보기' 채팅 메시지의 컨테이너 생성
+const lawmakerMessageContainer = document.createElement('div');
+lawmakerMessageContainer.classList.add('chat-row'); // 채팅 행 스타일 적용
 
-// '국회의원 모아보기' 제목
+// 프로필 이미지 추가
+const profileImage = document.createElement('img');
+profileImage.src = 'img/cats1.png'; // 프로필 이미지 경로
+profileImage.classList.add('chat-row-img-hidden'); // 이미지 스타일 적용
+
+// 말풍선 컨테이너 생성 및 스타일 적용
+const lawmakerBubbleContainer = document.createElement('div');
+lawmakerBubbleContainer.classList.add('chat-row-messege'); // 말풍선 스타일 적용
+lawmakerBubbleContainer.style.display = 'flex';
+lawmakerBubbleContainer.style.flexDirection = 'column';
+lawmakerBubbleContainer.style.alignItems = 'flex-start'; // 내용을 왼쪽 정렬
+
+// '국회의원 모아보기' 제목 추가
 const lawmakerTitleText = document.createElement('p');
 lawmakerTitleText.textContent = '국회의원 모아보기';
-lawmakerTitleText.style.fontWeight = 'bold';
-additionalMessage2.appendChild(lawmakerTitleText);
+lawmakerBubbleContainer.appendChild(lawmakerTitleText);
 
-// 사진과 설명을 추가
+// 사진과 설명 추가
 const items = [
   { imgSrc: 'img/channel.jpg', text: '사진1 설명', link: 'https://example.com/link1' },
   { imgSrc: 'img/channel.jpg', text: '사진2 설명', link: 'https://example.com/link2' },
@@ -273,28 +372,30 @@ items.forEach(item => {
   const itemLink = document.createElement('a');
   itemLink.href = item.link;
   itemLink.target = '_blank';
+  itemLink.style.display = 'flex';
+  itemLink.style.alignItems = 'center';
 
   const itemImg = document.createElement('img');
   itemImg.src = item.imgSrc;
   itemImg.alt = item.text;
-  itemImg.style.width = '100px'; // 이미지 크기 조정
-  itemImg.style.display = 'block'; // 이미지를 블록 요소로 표시
-  itemImg.style.margin = '0 auto 10px'; // 이미지를 중앙 정렬 및 마진 조정
+  itemImg.style.width = '50px'; // 이미지 크기 조절
+  itemImg.style.marginRight = '10px'; // 이미지와 텍스트 사이 간격
   itemLink.appendChild(itemImg);
 
   const itemText = document.createElement('p');
   itemText.textContent = item.text;
-  itemText.style.textAlign = 'center'; // 텍스트 중앙 정렬
+  itemLink.appendChild(itemText);
 
-  additionalMessage2.appendChild(itemLink);
-  additionalMessage2.appendChild(itemText);
+  lawmakerBubbleContainer.appendChild(itemLink);
 });
 
+// 프로필 이미지와 말풍선 컨테이너를 메인 컨테이너에 추가
+lawmakerMessageContainer.appendChild(profileImage);
+lawmakerMessageContainer.appendChild(lawmakerBubbleContainer);
 
-  // chat-screen 요소에 추가 메시지 div 추가
-  chatScreen.appendChild(messageContainer);
-  chatScreen.appendChild(additionalMessage2);
-  
+// 채팅창에 메인 컨테이너 추가
+chatScreen.appendChild(messageContainer);
+chatScreen.appendChild(lawmakerMessageContainer);  
 
   break;
 
@@ -304,13 +405,13 @@ items.forEach(item => {
       // "수입" 버튼일 경우의 처리
       // 링크 요소 생성
       const linkElementimport = document.createElement('a');
-      linkElementimport.href = 'https://naver.com'; // 링크 주소 설정
+      linkElementimport.href = 'https://n.news.naver.com/mnews/article/003/0012346200?sid=102'; // 링크 주소 설정
       linkElementimport.target = '_blank'; // 새 탭에서 링크 열기
 
       // 이미지 요소 생성
       const newArticleImageimport = document.createElement('img');
       newArticleImageimport.classList.add('article-image');
-      newArticleImageimport.src = 'img/승희.jpg';
+      newArticleImageimport.src = 'img/food.png';
       newArticleImageimport.alt = 'Attached Image';
 
       // 링크 요소에 이미지 요소 추가
@@ -325,7 +426,7 @@ items.forEach(item => {
 
       // 텍스트 요소 생성 및 설정
       const textElementimport = document.createElement('span');
-      textElementimport.textContent = 'ㅇㅇㅇ '; // 텍스트 내용 설정
+      textElementimport.textContent = '식품 기사 요약 '; // 텍스트 내용 설정
       textElementimport.style.marginLeft = '10px'; // 이미지와 텍스트 간 간격 조정
 
       // 메시지 컨테이너에 텍스트 요소 추가
@@ -333,7 +434,96 @@ items.forEach(item => {
 
       // 내용 요소에 메시지 컨테이너 추가
       newContent.appendChild(messageContainerimport);
-      break;
+      
+      // 메시지를 포함할 컨테이너 생성
+      const messageContainer2 = document.createElement('div');
+      messageContainer2.classList.add('chat-row');
+
+      // '현법률' 메시지와 이미지를 포함할 div 생성
+      const firstMessageContainer2 = document.createElement('div');
+      firstMessageContainer2.classList.add('chat-row-messege-container'); // 새로운 클래스
+
+      // '현법률' 메시지 생성
+      const firstMessageText2 = document.createElement('p');
+      firstMessageText2.classList.add('chat-row-messege');
+      firstMessageText2.textContent = '현법률';
+
+      // '현법률' 메시지용 이미지 생성
+      const firstMessageImg2 = document.createElement('img');
+      firstMessageImg2.classList.add('chat-row-img-hidden');
+      firstMessageImg2.src = 'img/cats1.png';
+
+      // '현법률' 메시지와 이미지를 컨테이너에 추가
+      firstMessageContainer2.appendChild(firstMessageImg2);
+      firstMessageContainer2.appendChild(firstMessageText2);
+
+      // '개정안' 메시지 생성 (바로 오른쪽에 위치)
+      const secondMessageText2 = document.createElement('p');
+      secondMessageText2.classList.add('chat-row-messege', 'second-message'); // 'second-message' 클래스 추가
+      secondMessageText2.textContent = "개정안";
+
+      // 메시지 컨테이너에 첫 번째와 두 번째 메시지 컨테이너 추가
+      messageContainer2.appendChild(firstMessageContainer2);
+      messageContainer2.appendChild(secondMessageText2);
+
+// '국회의원 모아보기' 채팅 메시지의 컨테이너 생성
+const lawmakerMessageContainer2 = document.createElement('div');
+lawmakerMessageContainer2.classList.add('chat-row'); // 채팅 행 스타일 적용
+
+// 프로필 이미지 추가
+const profileImage2 = document.createElement('img');
+profileImage2.src = 'img/cats1.png'; // 프로필 이미지 경로
+profileImage2.classList.add('chat-row-img-hidden'); // 이미지 스타일 적용
+
+// 말풍선 컨테이너 생성 및 스타일 적용
+const lawmakerBubbleContainer2 = document.createElement('div');
+lawmakerBubbleContainer2.classList.add('chat-row-messege'); // 말풍선 스타일 적용
+lawmakerBubbleContainer2.style.display = 'flex';
+lawmakerBubbleContainer2.style.flexDirection = 'column';
+lawmakerBubbleContainer2.style.alignItems = 'flex-start'; // 내용을 왼쪽 정렬
+
+// '국회의원 모아보기' 제목 추가
+const lawmakerTitleText2 = document.createElement('p');
+lawmakerTitleText2.textContent = '국회의원 모아보기';
+lawmakerBubbleContainer2.appendChild(lawmakerTitleText2);
+
+// 사진과 설명 추가
+const items2 = [
+  { imgSrc: 'img/channel.jpg', text: '사진1 설명', link: 'https://example.com/link1' },
+  { imgSrc: 'img/channel.jpg', text: '사진2 설명', link: 'https://example.com/link2' },
+  { imgSrc: 'img/channel.jpg', text: '사진3 설명', link: 'https://example.com/link3' }
+];
+
+items2.forEach(item => {
+  const itemLink2 = document.createElement('a');
+  itemLink2.href = item.link2;
+  itemLink2.target = '_blank';
+  itemLink2.style.display = 'flex';
+  itemLink2.style.alignItems = 'center';
+
+  const itemImg2 = document.createElement('img');
+  itemImg2.src = item.imgSrc;
+  itemImg2.alt = item.text;
+  itemImg2.style.width = '50px'; // 이미지 크기 조절
+  itemImg2.style.marginRight = '10px'; // 이미지와 텍스트 사이 간격
+  itemLink2.appendChild(itemImg2);
+
+  const itemText2 = document.createElement('p');
+  itemText2.textContent = item.text;
+  itemLink2.appendChild(itemText2);
+
+  lawmakerBubbleContainer2.appendChild(itemLink2);
+});
+
+// 프로필 이미지와 말풍선 컨테이너를 메인 컨테이너에 추가
+lawmakerMessageContainer2.appendChild(profileImage2);
+lawmakerMessageContainer2.appendChild(lawmakerBubbleContainer2);
+
+// 채팅창에 메인 컨테이너 추가
+chatScreen.appendChild(messageContainer2);
+chatScreen.appendChild(lawmakerMessageContainer2);  
+
+  break;
       
 
     // 다른 버튼에 대한 동작을 추가하려면 아래에 case를 계속해서 작성하면 됩니다.
@@ -379,45 +569,122 @@ buttons.forEach(button => {
   // 3버튼기능을 위한 함수
   function createMessage(button) {
     const chatScreen = document.querySelector('.chat-screen');
-    const newDiv = document.createElement('div');
-    newDiv.classList.add('chat-row');
 
-    const newImg = document.createElement('img');
-    newImg.classList.add('chat-row-img-hidden');
-    newImg.src = 'img/cats1.png';
-
-    const newRowText = document.createElement('p');
-    newRowText.classList.add('chat-row-messege');
-
-    switch (button) {
+        switch (button) {
       case 'left':
-        newRowText.textContent = '오늘의 이슈';
-        break;
+         // "금주의 이슈를 알려드립니다!" 채팅 생성
+      const issueRow = document.createElement('div');
+      issueRow.classList.add('chat-row');
+
+      const issueImg = document.createElement('img');
+      issueImg.classList.add('chat-row-img');
+      issueImg.src = 'img/cats1.png';
+
+      const issueTextDiv = document.createElement('div');
+      issueTextDiv.classList.add('chat-row-text');
+
+      const issueName = document.createElement('p');
+      issueName.classList.add('chat-row-name');
+      issueName.textContent = '오늘의 이슈, 오늘의 개정';
+
+      const issueContentDiv = document.createElement('div');
+      issueContentDiv.classList.add('chat-row-info');
+
+      const issueMessage = document.createElement('p');
+      issueMessage.classList.add('chat-row-messege');
+      issueMessage.textContent = '금주의 이슈를 알려드립니다!';
+
+      issueContentDiv.appendChild(issueMessage);
+      issueTextDiv.appendChild(issueName);
+      issueTextDiv.appendChild(issueContentDiv);
+      issueRow.appendChild(issueImg);
+      issueRow.appendChild(issueTextDiv);
+
+      // 버튼이 포함된 채팅 생성
+      const buttonRow = document.createElement('div');
+      buttonRow.classList.add('chat-row');
+
+      const buttonImgHidden = document.createElement('img');
+      buttonImgHidden.classList.add('chat-row-img-hidden');
+      buttonImgHidden.src = 'img/cats1.png';
+
+      const buttonTextDiv = document.createElement('div');
+      buttonTextDiv.classList.add('chat-row-text');
+
+      const buttonContentDiv = document.createElement('div');
+      buttonContentDiv.classList.add('chat-row-info');
+
+      const buttonMessage = document.createElement('p');
+      buttonMessage.classList.add('chat-row-messege');
+      buttonMessage.innerHTML = `
+        <button class="chat-row-messege-vote" id="dog">개</button>
+        <button class="chat-row-messege-vote" id="airplane">항공기</button>
+        <button class="chat-row-messege-vote" id="import">수입</button>
+      `;
+
+      buttonContentDiv.appendChild(buttonMessage);
+      buttonTextDiv.appendChild(buttonContentDiv);
+      buttonRow.appendChild(buttonImgHidden);
+      buttonRow.appendChild(buttonTextDiv);
+
+      // 채팅창에 채팅 추가
+      chatScreen.appendChild(issueRow);
+      chatScreen.appendChild(buttonRow);
+
+      // 버튼 이벤트 리스너 다시 연결
+      document.querySelectorAll('.chat-row-messege-vote').forEach(button => {
+        button.addEventListener('click', buttonClickHandler);
+      });
+
+      break;
 
       case 'center':
-        newRowText.textContent = '함께 논의';
-        break;
+      // "함께 논의하기" 링크 직접 열기
+      window.open("https://www.notion.so/a1e756b25b8d4620ba45dacceb028853?pvs=4", "_blank");
+      break;
+
 
       case 'right':
-          newRowText.innerHTML = `
-            <p class="chat-row-messege">투표하세요:</p>
-            <div class="chat-row-info">
-                <button class="chat-row-messege-vote" id="voteOption1">보기 1</button>
-                <button class="chat-row-messege-vote" id="voteOption2">보기 2</button>
-                <button class="chat-row-messege-vote" id="voteOption3">보기 3</button>
-            </div>
-        `;
-        // 각 투표 버튼에 클릭 이벤트 추가
-        newRowText.querySelectorAll('.chat-row-messege-vote').forEach(button => {
-            button.addEventListener('click', voteButtonClickHandler);
-            
-        });
+          // 투표 기능 로직은 그대로 유지
+      const voteRow = document.createElement('div');
+      voteRow.classList.add('chat-row');
+
+      const voteImg = document.createElement('img');
+      voteImg.classList.add('chat-row-img-hidden');
+      voteImg.src = 'img/cats1.png';
+
+      const voteTextDiv = document.createElement('div');
+      voteTextDiv.classList.add('chat-row-text');
+
+      const voteContentDiv = document.createElement('div');
+      voteContentDiv.classList.add('chat-row-info');
+
+      const voteMessage = document.createElement('p');
+      voteMessage.classList.add('chat-row-messege');
+      voteMessage.innerHTML = `
+        <p class="chat-row-messege">투표하세요:</p>
+        <div class="chat-row-info">
+            <button class="chat-row-messege-vote" id="voteOption1">보기 1</button>
+            <button class="chat-row-messege-vote" id="voteOption2">보기 2</button>
+            <button class="chat-row-messege-vote" id="voteOption3">보기 3</button>
+        </div>
+      `;
+
+      voteContentDiv.appendChild(voteMessage);
+      voteTextDiv.appendChild(voteContentDiv);
+      voteRow.appendChild(voteImg);
+      voteRow.appendChild(voteTextDiv);
+
+      // 채팅창에 투표 채팅 추가
+      chatScreen.appendChild(voteRow);
+
+      // 투표 버튼 이벤트 리스너 다시 연결
+      document.querySelectorAll('.chat-row-messege-vote').forEach(button => {
+          button.addEventListener('click', voteButtonClickHandler);
+      });
         break;
     }
 
-    newDiv.appendChild(newImg);
-    newDiv.appendChild(newRowText);
-    chatScreen.appendChild(newDiv);
   }
   
   // 투표 버튼 클릭 이벤트 핸들러 함수
@@ -448,5 +715,3 @@ buttons.forEach(button => {
     ></script>
   </body>
 </html>
-
-
