@@ -330,3 +330,13 @@
   .item-text {
     text-align: center; /* 텍스트를 중앙 정렬 */
   }
+  .chat-keywordimage{
+    width: 120px;
+    height: 120px;
+    margin-left: 10px;
+  }
+  
+  .vote-result{
+    width:200px;
+    height: 200px;
+      }
