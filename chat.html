@@ -60,11 +60,39 @@
         <img class="chat-row-img-hidden" src="img/cats1.png"/>
         <div class="chat-row-text">
           <div class="chat-row-info">
-            <p class="chat-row-messege">
-              <button class="chat-row-messege-vote" id="dog">개</button>
-              <button class="chat-row-messege-vote" id="airplane">항공기</button>
-              <button class="chat-row-messege-vote" id="import">수입</button>
-                         </p>
+ <p class="chat-row-messege vote">
+              <button
+                onclick="showKeyword('dog')"
+                class="chat-row-messege-vote"
+                id="dog"
+              >
+                
+                <img src="dog.PNG" class="chat-keywordimage" />
+              </button>
+              <button
+                onclick="showKeyword('airplane')"
+                class="chat-row-messege-vote"
+                id="airplane"
+              >
+                
+                <img
+                  src="airplane.PNG"
+                  class="chat-keywordimage"
+                  id="dog"
+                />
+              </button>
+              <button
+                onclick="showKeyword('food')"
+                class="chat-row-messege-vote"
+                id="food"
+              >
+                
+                <img
+                  src="food.PNG"
+                  class="chat-keywordimage"
+                />
+              </button>
+            </p>
             <p class="chat-row-time">9:00</p>
           </div>
         </div>
@@ -159,7 +187,7 @@ function buttonClickHandler(event) {
       // 이미지 요소 생성
       const newArticleImageairplane = document.createElement('img');
       newArticleImageairplane.classList.add('article-image');
-      newArticleImageairplane.src = 'img/drug (2).png';
+      newArticleImageairplane.src = 'img/airplane.png';
       newArticleImageairplane.alt = 'Attached Image';
 
       // 링크 요소에 이미지 요소 추가
@@ -401,39 +429,39 @@ chatScreen.appendChild(lawmakerMessageContainer);
 
 
 
-      case 'import':
-      // "수입" 버튼일 경우의 처리
+      case 'food':
+      // "수입식품" 버튼일 경우의 처리
       // 링크 요소 생성
-      const linkElementimport = document.createElement('a');
-      linkElementimport.href = 'https://n.news.naver.com/mnews/article/003/0012346200?sid=102'; // 링크 주소 설정
-      linkElementimport.target = '_blank'; // 새 탭에서 링크 열기
+      const linkElementfood = document.createElement('a');
+      linkElementfood.href = 'https://n.news.naver.com/mnews/article/003/0012346200?sid=102'; // 링크 주소 설정
+      linkElementfood.target = '_blank'; // 새 탭에서 링크 열기
 
       // 이미지 요소 생성
-      const newArticleImageimport = document.createElement('img');
-      newArticleImageimport.classList.add('article-image');
-      newArticleImageimport.src = 'img/food.png';
-      newArticleImageimport.alt = 'Attached Image';
+      const newArticleImagefood = document.createElement('img');
+      newArticleImagefood.classList.add('article-image');
+      newArticleImagefood.src = 'img/food.png';
+      newArticleImagefood.alt = 'Attached Image';
 
       // 링크 요소에 이미지 요소 추가
-      linkElementimport.appendChild(newArticleImageimport);
+      linkElementfood.appendChild(newArticleImagefood);
 
       // chat-row-messege 내에 링크(이미지 포함)와 텍스트를 나란히 배치하기 위한 컨테이너 생성
-      const messageContainerimport = document.createElement('div');
-      messageContainerimport.classList.add('chat-row-messege');
+      const messageContainerfood = document.createElement('div');
+      messageContainerfood.classList.add('chat-row-messege');
     
       // 메시지 컨테이너에 링크(이미지 포함) 요소 추가
-      messageContainerimport.appendChild(linkElementimport);
+      messageContainerfood.appendChild(linkElementfood);
 
       // 텍스트 요소 생성 및 설정
-      const textElementimport = document.createElement('span');
-      textElementimport.textContent = '식품 기사 요약 '; // 텍스트 내용 설정
-      textElementimport.style.marginLeft = '10px'; // 이미지와 텍스트 간 간격 조정
+      const textElementfood = document.createElement('span');
+      textElementfood.textContent = '식품 기사 요약 '; // 텍스트 내용 설정
+      textElementfood.style.marginLeft = '10px'; // 이미지와 텍스트 간 간격 조정
 
       // 메시지 컨테이너에 텍스트 요소 추가
-      messageContainerimport.appendChild(textElementimport);
+      messageContainerfood.appendChild(textElementfood);
 
       // 내용 요소에 메시지 컨테이너 추가
-      newContent.appendChild(messageContainerimport);
+      newContent.appendChild(messageContainerfood);
       
       // 메시지를 포함할 컨테이너 생성
       const messageContainer2 = document.createElement('div');
@@ -600,36 +628,49 @@ buttons.forEach(button => {
       issueRow.appendChild(issueImg);
       issueRow.appendChild(issueTextDiv);
 
-      // 버튼이 포함된 채팅 생성
-      const buttonRow = document.createElement('div');
-      buttonRow.classList.add('chat-row');
+    // "오늘의 이슈" 채팅 생성
+    const newIssueRow = document.createElement('div');
+    newIssueRow.classList.add('chat-row');
 
-      const buttonImgHidden = document.createElement('img');
-      buttonImgHidden.classList.add('chat-row-img-hidden');
-      buttonImgHidden.src = 'img/cats1.png';
+    const newIssueImg = document.createElement('img');
+    newIssueImg.classList.add('chat-row-img-hidden'); // 이미지를 숨깁니다
+    newIssueImg.src = 'img/cats1.png';
 
-      const buttonTextDiv = document.createElement('div');
-      buttonTextDiv.classList.add('chat-row-text');
+    const newIssueTextDiv = document.createElement('div');
+    newIssueTextDiv.classList.add('chat-row-text');
 
-      const buttonContentDiv = document.createElement('div');
-      buttonContentDiv.classList.add('chat-row-info');
+    const newIssueContentDiv = document.createElement('div');
+    newIssueContentDiv.classList.add('chat-row-info');
 
-      const buttonMessage = document.createElement('p');
-      buttonMessage.classList.add('chat-row-messege');
-      buttonMessage.innerHTML = `
-        <button class="chat-row-messege-vote" id="dog">개</button>
-        <button class="chat-row-messege-vote" id="airplane">항공기</button>
-        <button class="chat-row-messege-vote" id="import">수입</button>
-      `;
+    const newIssueMessage = document.createElement('p');
+    newIssueMessage.classList.add('chat-row-messege');
+    newIssueMessage.innerHTML = `
+        <button onclick="showKeyword('dog')" class="chat-row-messege-vote" id="dog">
+            <img src="dog.PNG" class="chat-keywordimage" />
+        </button>
+        <button onclick="showKeyword('airplane')" class="chat-row-messege-vote" id="airplane">
+            <img src="airplane.PNG" class="chat-keywordimage" />
+        </button>
+        <button onclick="showKeyword('food')" class="chat-row-messege-vote" id="food">
+            <img src="food.PNG" class="chat-keywordimage" />
+        </button>
+    `;
 
-      buttonContentDiv.appendChild(buttonMessage);
-      buttonTextDiv.appendChild(buttonContentDiv);
-      buttonRow.appendChild(buttonImgHidden);
-      buttonRow.appendChild(buttonTextDiv);
+    const newIssueTime = document.createElement('p');
+    newIssueTime.classList.add('chat-row-time');
+    newIssueTime.textContent = '9:00';
+
+    newIssueContentDiv.appendChild(newIssueMessage);
+    newIssueContentDiv.appendChild(newIssueTime);
+    newIssueTextDiv.appendChild(newIssueContentDiv);
+    newIssueRow.appendChild(newIssueImg);
+    newIssueRow.appendChild(newIssueTextDiv);
+
+   
 
       // 채팅창에 채팅 추가
       chatScreen.appendChild(issueRow);
-      chatScreen.appendChild(buttonRow);
+      chatScreen.appendChild(newIssueRow);
 
       // 버튼 이벤트 리스너 다시 연결
       document.querySelectorAll('.chat-row-messege-vote').forEach(button => {
@@ -664,9 +705,9 @@ buttons.forEach(button => {
       voteMessage.innerHTML = `
         <p class="chat-row-messege">투표하세요:</p>
         <div class="chat-row-info">
-            <button class="chat-row-messege-vote" id="voteOption1">보기 1</button>
-            <button class="chat-row-messege-vote" id="voteOption2">보기 2</button>
-            <button class="chat-row-messege-vote" id="voteOption3">보기 3</button>
+            <button class="chat-row-messege-vote" id="voteOption1">반려견</button>
+            <button class="chat-row-messege-vote" id="voteOption2">항공기</button>
+            <button class="chat-row-messege-vote" id="voteOption3">수입식품</button>
         </div>
       `;
 
@@ -691,21 +732,57 @@ buttons.forEach(button => {
   function voteButtonClickHandler(event) {
     const selectedOption = event.currentTarget.textContent; // 클릭한 버튼의 텍스트(보기 1, 보기 2, 보기 3)
     const chatScreen = event.currentTarget.closest('.chat-screen');
-    const newDiv = document.createElement('div');
-    newDiv.classList.add('chat-row');
 
-    const newImg = document.createElement('img');
-    newImg.classList.add('chat-row-img-hidden');
-    newImg.src = 'img/cats1.png';
+    // 투표 결과를 알려주는 채팅 메시지 생성
+    const voteResultDiv = document.createElement('div');
+    voteResultDiv.classList.add('chat-row');
 
-    const newRowText = document.createElement('p');
-    newRowText.classList.add('chat-row-messege');
-    newRowText.textContent = `투표가 완료되었습니다! 선택한 옵션: ${selectedOption}`;
+    const hiddenImgDiv = document.createElement('img');
+    hiddenImgDiv.classList.add('chat-row-img-hidden');
+    hiddenImgDiv.src = 'img/cats1.png';
 
-    newDiv.appendChild(newImg);
-    newDiv.appendChild(newRowText);
-    chatScreen.appendChild(newDiv);
-  }
+    const voteTextDiv = document.createElement('div');
+    voteTextDiv.classList.add('chat-row-text');
+
+    const voteInfoDiv = document.createElement('div');
+    voteInfoDiv.classList.add('chat-row-info');
+
+    const voteMessage = document.createElement('p');
+    voteMessage.classList.add('chat-row-messege');
+    voteMessage.textContent = `투표가 완료되었습니다! 선택한 옵션: ${selectedOption}`;
+
+    voteInfoDiv.appendChild(voteMessage);
+    voteTextDiv.appendChild(voteInfoDiv);
+    voteResultDiv.appendChild(hiddenImgDiv);
+    voteResultDiv.appendChild(voteTextDiv);
+
+    // 투표 결과 이미지를 포함한 채팅 메시지 생성
+    const voteImageDiv = document.createElement('div');
+    voteImageDiv.classList.add('chat-row');
+
+    const voteImageTextDiv = document.createElement('div');
+    voteImageTextDiv.classList.add('chat-row-text');
+
+    const voteImageInfoDiv = document.createElement('div');
+    voteImageInfoDiv.classList.add('chat-row-info');
+
+    const voteResultImage = document.createElement('p');
+    voteResultImage.classList.add('chat-row-messege'); // 적절한 CSS 클래스를 추가해주세요.
+    voteResultImage.innerHTML = `
+        <button onclick="showKeyword('dog')" class="chat-row-messege-vote" id="dog">
+            <img src="img/vote-result.png" class="vote-result" />
+        </button>
+    `;
+
+    voteImageInfoDiv.appendChild(voteResultImage);
+    voteImageTextDiv.appendChild(voteImageInfoDiv);
+    voteImageDiv.appendChild(hiddenImgDiv.cloneNode()); // 새 이미지 태그를 위해 cloneNode 사용
+    voteImageDiv.appendChild(voteImageTextDiv);
+
+    // 채팅창에 메시지 추가
+    chatScreen.appendChild(voteResultDiv);
+    chatScreen.appendChild(voteImageDiv);
+}
 </script>
 
     
