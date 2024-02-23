@@ -67,7 +67,7 @@
                 id="dog"
               >
                 
-                <img src="img/dog.png" class="chat-keywordimage" />
+                <img src="keyword_images/dog.PNG" class="chat-keywordimage" />
               </button>
               <button
                 onclick="showKeyword('airplane')"
@@ -76,7 +76,7 @@
               >
                 
                 <img
-                  src="img/airplane.png"
+                  src="keyword_images/airplane.PNG"
                   class="chat-keywordimage"
                   id="dog"
                 />
@@ -88,7 +88,7 @@
               >
                 
                 <img
-                  src="img/food.png"
+                  src="keyword_images/food.PNG"
                   class="chat-keywordimage"
                 />
               </button>
@@ -97,7 +97,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="chat-row row--me">
         <div class="chat-row-text">
           <div class="chat-row-info">
@@ -187,7 +187,7 @@ function buttonClickHandler(event) {
       // 이미지 요소 생성
       const newArticleImageairplane = document.createElement('img');
       newArticleImageairplane.classList.add('article-image');
-      newArticleImageairplane.src = 'img/airplane2.png';
+      newArticleImageairplane.src = 'img/airplane.png';
       newArticleImageairplane.alt = 'Attached Image';
 
       // 링크 요소에 이미지 요소 추가
@@ -196,13 +196,15 @@ function buttonClickHandler(event) {
       // chat-row-messege 내에 링크(이미지 포함)와 텍스트를 나란히 배치하기 위한 컨테이너 생성
       const messageContainerairplane = document.createElement('div');
       messageContainerairplane.classList.add('chat-row-messege');
+      messageContainerairplane.style.display = 'flex'; // Flexbox 사용
+    messageContainerairplane.style.alignItems = 'center'; // 아이템들을 세로 중앙에 배치
     
       // 메시지 컨테이너에 링크(이미지 포함) 요소 추가
       messageContainerairplane.appendChild(linkElementairplane);
 
       // 텍스트 요소 생성 및 설정
       const textElementairplane = document.createElement('span');
-      textElementairplane.textContent = ' 항공기 기사요약'; // 텍스트 내용 설정
+      textElementairplane.textContent = ' 20대 여성 A씨가 필로폰 투약 후 뉴욕발 인천행 대한항공 비행기 내에서 비상문 개방 시도로 인천국제공항경찰단에 의해 항공 보안법 위반 및 마약류 관리에 관한 법률상 향정 혐의로 체포되었다. A씨는 불안 증세를 보이며 비상문을 열려고 했으나 승무원에 의해 제지당했다. 경찰은 A씨의 마약 양성 반응 확인 후 긴급체포하고, 비상문 개방 시도 이유와 투약량을 추가 조사할 예정이다. 승객이 승무원 지시 없이 비상문 조작 시 최대 10년 징역형에 처할 수 있다.'; // 텍스트 내용 설정
       textElementairplane.style.marginLeft = '10px'; // 이미지와 텍스트 간 간격 조정
 
       // 메시지 컨테이너에 텍스트 요소 추가
@@ -223,7 +225,15 @@ function buttonClickHandler(event) {
       const firstMessageText3 = document.createElement('p');
       firstMessageText3.classList.add('chat-row-messege');
       firstMessageText3.textContent = '현법률';
-
+      
+      // '현법률' 메시지에 대한 줄바꿈들 생성 및 추가
+      firstMessageText3.appendChild(document.createElement('br'));
+      firstMessageText3.appendChild(document.createElement('br'));
+      
+      // '현법률' 메시지에 대한 두 번째 줄 텍스트 생성 및 추가
+      const secondLineTextForLaw3 = document.createTextNode('술이나 약물을 복용하고 타인에게 해를 끼치는 행위와 항공운송사업자의 조종실 출입문 보안 강화 및 무단 출입 통제 의무가 항공보안법에 명시되어 있다.');
+      firstMessageText3.appendChild(secondLineTextForLaw3);
+      
       // '현법률' 메시지용 이미지 생성
       const firstMessageImg3 = document.createElement('img');
       firstMessageImg3.classList.add('chat-row-img-hidden');
@@ -237,10 +247,20 @@ function buttonClickHandler(event) {
       const secondMessageText3 = document.createElement('p');
       secondMessageText3.classList.add('chat-row-messege', 'second-message'); // 'second-message' 클래스 추가
       secondMessageText3.textContent = "개정안";
+      
+      // '현법률' 메시지에 대한 줄바꿈들 생성 및 추가
+      secondMessageText3.appendChild(document.createElement('br'));
+      secondMessageText3.appendChild(document.createElement('br'));
+
+      // '현법률' 메시지에 대한 두 번째 줄 텍스트 생성 및 추가
+      const secondLineTextFornewlaw3 = document.createTextNode('승객의 술이나 약물 복용 후 비상문 조작 시도 등을 포함하여 항공 안전을 위협하는 행위를 명시적으로 금지하고, 해당 위반 행위에 대한 처벌을 신설 및 강화하며, 항공운송사업자의 조종실 및 비상문 보안 강화 조치를 구체화하여 항공기의 전반적인 안전과 보안을 강화한다.');
+      secondMessageText3.appendChild(secondLineTextFornewlaw3);
 
       // 메시지 컨테이너에 첫 번째와 두 번째 메시지 컨테이너 추가
       messageContainer3.appendChild(firstMessageContainer3);
       messageContainer3.appendChild(secondMessageText3);
+
+      
 
 // '국회의원 모아보기' 채팅 메시지의 컨테이너 생성
 const lawmakerMessageContainer3 = document.createElement('div');
@@ -265,9 +285,8 @@ lawmakerBubbleContainer3.appendChild(lawmakerTitleText3);
 
 // 사진과 설명 추가
 const items3 = [
-  { imgSrc: 'img/channel.jpg', text: '사진1 설명', link: 'https://example.com/link1' },
-  { imgSrc: 'img/박대출.jpg', text: '박대출', link: 'https://www.assembly.go.kr/members/21st/PARKDAECHUL' },
-  { imgSrc: 'img/이용호.jpg', text: '사진3 설명', link: 'https://www.assembly.go.kr/members/21st/LEEYONGHO' }
+  { imgSrc: 'img/조은희.jpg', text: '조은희', link: 'https://www.assembly.go.kr/members/21st/CHOEUNHEE' },
+  { imgSrc: 'img/조오섭.jpg', text: '조오섭', link: 'https://www.assembly.go.kr/members/21st/JOOSEOP' }
 ];
 
 items3.forEach(item => {
@@ -321,13 +340,15 @@ chatScreen.appendChild(lawmakerMessageContainer3);
       // chat-row-messege 내에 링크(이미지 포함)와 텍스트를 나란히 배치하기 위한 컨테이너 생성
       const messageContainerdog = document.createElement('div');
       messageContainerdog.classList.add('chat-row-messege');
+      messageContainerdog.style.display = 'flex'; // Flexbox 사용
+    messageContainerdog.style.alignItems = 'center'; // 아이템들을 세로 중앙에 배치
     
       // 메시지 컨테이너에 링크(이미지 포함) 요소 추가
       messageContainerdog.appendChild(linkElementdog);
 
       // 텍스트 요소 생성 및 설정
       const textElementdog = document.createElement('span');
-      textElementdog.textContent = '강아지 기사 요약'; // 텍스트 내용 설정
+      textElementdog.textContent = '한 갈색 푸들이 주인에 의해 두 번 유기되었으며, 첫 번째 유기 후 보호소로부터 연락을 받은 주인이 인식 칩을 제거한 후 다시 버림받아 온라인 커뮤니티에서 공분을 사고 있다.'; // 텍스트 내용 설정
       textElementdog.style.marginLeft = '10px'; // 이미지와 텍스트 간 간격 조정
 
       // 메시지 컨테이너에 텍스트 요소 추가
@@ -350,6 +371,14 @@ chatScreen.appendChild(lawmakerMessageContainer3);
       firstMessageText.classList.add('chat-row-messege');
       firstMessageText.textContent = '현법률';
 
+      // '현법률' 메시지에 대한 줄바꿈들 생성 및 추가
+      firstMessageText.appendChild(document.createElement('br'));
+      firstMessageText.appendChild(document.createElement('br'));
+      
+      // '현법률' 메시지에 대한 두 번째 줄 텍스트 생성 및 추가
+      const secondLineTextForLaw = document.createTextNode('동물보호법 제97조 6항과 제10조 4항에 따르면, 반려동물에게 적정한 생활 환경을 제공하지 않거나 상습적으로 동물보호 관련 범죄를 저지른 경우, 법정 형량의 최대 2분의 1까지 가중 처벌할 수 있다.');
+      firstMessageText.appendChild(secondLineTextForLaw);
+
       // '현법률' 메시지용 이미지 생성
       const firstMessageImg = document.createElement('img');
       firstMessageImg.classList.add('chat-row-img-hidden');
@@ -363,6 +392,14 @@ chatScreen.appendChild(lawmakerMessageContainer3);
       const secondMessageText = document.createElement('p');
       secondMessageText.classList.add('chat-row-messege', 'second-message'); // 'second-message' 클래스 추가
       secondMessageText.textContent = "개정안";
+
+      // '현법률' 메시지에 대한 줄바꿈들 생성 및 추가
+      secondMessageText.appendChild(document.createElement('br'));
+      secondMessageText.appendChild(document.createElement('br'));
+
+      // '현법률' 메시지에 대한 두 번째 줄 텍스트 생성 및 추가
+      const secondLineTextFornewlaw = document.createTextNode('상습적인 동물보호 관련 범죄를 저지른 자에게는 최대 형량을 두 배까지 가중하며, 반려동물의 적정한 사육 환경 미제공, 인식 칩 제거, 상해 또는 질병 유발 등의 행위는 더욱 엄격하게 처벌한다.');
+      secondMessageText.appendChild(secondLineTextFornewlaw);
 
       // 메시지 컨테이너에 첫 번째와 두 번째 메시지 컨테이너 추가
       messageContainer.appendChild(firstMessageContainer);
@@ -391,10 +428,9 @@ lawmakerBubbleContainer.appendChild(lawmakerTitleText);
 
 // 사진과 설명 추가
 const items = [
-  { imgSrc: 'img/박홍근.jpg', text: '박홍근 의원', link: 'https://www.assembly.go.kr/members/21st/PARKHONGKEUN' },
+  { imgSrc: 'img/맹성규.jpg', text: '맹성규 의원', link: 'https://www.assembly.go.kr/members/21st/MAENGSUNGKYU' },
   { imgSrc: 'img/한정애.jpg', text: '한정애 의원', link: 'https://www.assembly.go.kr/members/21st/HANJEOUNGAE' },
-  { imgSrc: 'img/channel.jpg', text: '사진3 설명', link: 'https://example.com/link3' }
-];
+]
 
 items.forEach(item => {
   const itemLink = document.createElement('a');
@@ -439,7 +475,7 @@ chatScreen.appendChild(lawmakerMessageContainer);
       // 이미지 요소 생성
       const newArticleImagefood = document.createElement('img');
       newArticleImagefood.classList.add('article-image');
-      newArticleImagefood.src = 'img/food2.png';
+      newArticleImagefood.src = 'img/food.png';
       newArticleImagefood.alt = 'Attached Image';
 
       // 링크 요소에 이미지 요소 추가
@@ -448,13 +484,15 @@ chatScreen.appendChild(lawmakerMessageContainer);
       // chat-row-messege 내에 링크(이미지 포함)와 텍스트를 나란히 배치하기 위한 컨테이너 생성
       const messageContainerfood = document.createElement('div');
       messageContainerfood.classList.add('chat-row-messege');
+      messageContainerfood.style.display = 'flex'; // Flexbox 사용
+    messageContainerfood.style.alignItems = 'center'; // 아이템들을 세로 중앙에 배치
     
       // 메시지 컨테이너에 링크(이미지 포함) 요소 추가
       messageContainerfood.appendChild(linkElementfood);
 
       // 텍스트 요소 생성 및 설정
       const textElementfood = document.createElement('span');
-      textElementfood.textContent = '식품 기사 요약 '; // 텍스트 내용 설정
+      textElementfood.textContent = '서울에서 발기부전치료제 성분 타다라필이 함유된 불법 수입 벌꿀을 판매한 업자가 적발되어 식품위생법 및 수입식품안전관리 특별법 위반으로 검찰에 송치되고, 미국 FDA에서도 해당 제품의 위해성이 확인되어 판매 금지 조치가 내려졌습니다.'; // 텍스트 내용 설정
       textElementfood.style.marginLeft = '10px'; // 이미지와 텍스트 간 간격 조정
 
       // 메시지 컨테이너에 텍스트 요소 추가
@@ -476,6 +514,14 @@ chatScreen.appendChild(lawmakerMessageContainer);
       firstMessageText2.classList.add('chat-row-messege');
       firstMessageText2.textContent = '현법률';
 
+      // '현법률' 메시지에 대한 줄바꿈들 생성 및 추가
+      firstMessageText2.appendChild(document.createElement('br'));
+      firstMessageText2.appendChild(document.createElement('br'));
+      
+      // '현법률' 메시지에 대한 두 번째 줄 텍스트 생성 및 추가
+      const secondLineTextForLaw2 = document.createTextNode('수입신고자는 수입식품의 안전과 품질에 대한 책임을 지며, 거짓 수입신고와 부적합 식품의 재수입을 금지하고, 필수 검사를 실시해야 한다.');
+      firstMessageText2.appendChild(secondLineTextForLaw2);
+
       // '현법률' 메시지용 이미지 생성
       const firstMessageImg2 = document.createElement('img');
       firstMessageImg2.classList.add('chat-row-img-hidden');
@@ -489,6 +535,14 @@ chatScreen.appendChild(lawmakerMessageContainer);
       const secondMessageText2 = document.createElement('p');
       secondMessageText2.classList.add('chat-row-messege', 'second-message'); // 'second-message' 클래스 추가
       secondMessageText2.textContent = "개정안";
+      
+      // '현법률' 메시지에 대한 줄바꿈들 생성 및 추가
+      secondMessageText2.appendChild(document.createElement('br'));
+      secondMessageText2.appendChild(document.createElement('br'));
+
+      // '현법률' 메시지에 대한 두 번째 줄 텍스트 생성 및 추가
+      const secondLineTextFornewlaw2 = document.createTextNode('수입식품에 대한 안전성 및 품질 검증 절차를 강화하고, 위반 시 처벌을 강화하며, 해외에서 금지된 물질이 포함된 식품의 수입을 엄격히 금지하고 검사의 투명성과 공정성을 높인다.');
+      secondMessageText2.appendChild(secondLineTextFornewlaw2);      
 
       // 메시지 컨테이너에 첫 번째와 두 번째 메시지 컨테이너 추가
       messageContainer2.appendChild(firstMessageContainer2);
@@ -517,9 +571,7 @@ lawmakerBubbleContainer2.appendChild(lawmakerTitleText2);
 
 // 사진과 설명 추가
 const items2 = [
-  { imgSrc: 'img/김영주.jpg', text: '김영주 의원', link: 'https://www.assembly.go.kr/members/21st/KIMYOUNGJOO' },
-  { imgSrc: 'img/channel.jpg', text: '사진2 설명', link: 'https://example.com/link2' },
-  { imgSrc: 'img/이.jpg', text: '사진3 설명', link: 'https://example.com/link3' }
+  { imgSrc: 'img/최혜영.jpg', text: '최혜영 의원', link: 'https://www.assembly.go.kr/members/21st/CHOIHYEYOUNG' },
 ];
 
 items2.forEach(item => {
@@ -628,7 +680,7 @@ buttons.forEach(button => {
       issueRow.appendChild(issueImg);
       issueRow.appendChild(issueTextDiv);
 
-    // "오늘의 이슈" 채팅 생성
+       // "오늘의 이슈" 채팅 생성
     const newIssueRow = document.createElement('div');
     newIssueRow.classList.add('chat-row');
 
@@ -646,13 +698,13 @@ buttons.forEach(button => {
     newIssueMessage.classList.add('chat-row-messege');
     newIssueMessage.innerHTML = `
         <button onclick="showKeyword('dog')" class="chat-row-messege-vote" id="dog">
-            <img src="img/dog.png" class="chat-keywordimage" />
+            <img src="keyword_images/dog.PNG" class="chat-keywordimage" />
         </button>
         <button onclick="showKeyword('airplane')" class="chat-row-messege-vote" id="airplane">
-            <img src="img/airplane.png" class="chat-keywordimage" />
+            <img src="keyword_images/airplane.PNG" class="chat-keywordimage" />
         </button>
         <button onclick="showKeyword('food')" class="chat-row-messege-vote" id="food">
-            <img src="img/food.png" class="chat-keywordimage" />
+            <img src="keyword_images/food.PNG" class="chat-keywordimage" />
         </button>
     `;
 
@@ -703,7 +755,7 @@ buttons.forEach(button => {
       const voteMessage = document.createElement('p');
       voteMessage.classList.add('chat-row-messege');
       voteMessage.innerHTML = `
-        <p class="chat-row-messege">투표하세요:</p>
+        <p class="chat-row-messege">투표하세요</p>
         <div class="chat-row-info">
             <button class="chat-row-messege-vote" id="voteOption1">반려견</button>
             <button class="chat-row-messege-vote" id="voteOption2">항공기</button>
@@ -792,3 +844,4 @@ buttons.forEach(button => {
     ></script>
   </body>
 </html>
+
