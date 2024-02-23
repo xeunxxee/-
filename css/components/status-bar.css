@@ -1,15 +1,22 @@
 .status-bar {
-    position: sticky;
-    top:0;
-    width:100%;
-    display:flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
     padding: 5px 5px;
     box-sizing: border-box;
     font-size: 80%;
-    background-color:white;
+    background-color: white;
+    z-index: 1000; /* 확실한 계층 분리를 위해 높은 값을 설정 */
 }
+
+.chat-screen {
+    padding-top: 50px; /* 상태 바 높이에 따라 조정 */
+    padding-bottom: 50px; /* 필요에 따라 조정 */
+}
+
 
 .status-bar__column {
     width:33%;
