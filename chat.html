@@ -116,25 +116,7 @@
 
 
 <script>
-  // 투표 버튼 클릭 이벤트 핸들러 함수
-   function voteButtonClickHandler(event) {
-        const selectedOption = event.currentTarget.textContent; // 클릭한 버튼의 텍스트(보기 1, 보기 2, 보기 3)
-        const chatScreen = event.currentTarget.closest('.chat-screen');
-        const newDiv = document.createElement('div');
-        newDiv.classList.add('chat-row');
 
-        const newImg = document.createElement('img');
-        newImg.classList.add('chat-row-img-hidden');
-        newImg.src = 'img/cats1.png';
-
-        const newRowText = document.createElement('p');
-        newRowText.classList.add('chat-row-messege');
-        newRowText.textContent = `투표가 완료되었습니다! 선택한 옵션: ${selectedOption}`;
-
-        newDiv.appendChild(newImg);
-        newDiv.appendChild(newRowText);
-        chatScreen.appendChild(newDiv);
-    }
     // 각 버튼을 가져오기
 const buttons = document.querySelectorAll('.chat-row-messege-vote');
 
