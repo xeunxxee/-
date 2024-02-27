@@ -187,7 +187,7 @@ function buttonClickHandler(event) {
 
       // 텍스트 요소 생성 및 설정
       const textElementairplane = document.createElement('span');
-      textElementairplane.innerHTML = ' <span class="bold">기사 요약</span><br>20대 여성이 필로폰 투약 후 대한항공 비행 중 비상문 개방 시도로 체포되었습니다. 경찰은 여성의 마약 양성 반응 확인 후 조사 중이며, 승객이 승무원 지시 없이 비상문을 조작할 경우 최대 10년 징역형에 처할 수 있습니다.<br><br><span class="bold">개정안 제안 이유</span><br>승객이 마약 등을 투약한 상태에서 비상문을 조작하려고 시도하는 경우등에 대한 명확한 처벌규정이 없는 상태입니다. 이 때문에 마약 투약 후 비정상적 행동이 발생했을 때 적절한 처벌을 적용하는 데 어려움이 있습니다. 이 법안은 이러한 허점을 보완하고 항공 안전을 위협하는 행위에 대해 보다 체계적이고 엄격한 처벌 기준을 마련하려는 목적에서 제안되었습니다.'; // 텍스트 내용 설정
+      textElementairplane.inner = ' <span class="bold">기사 요약</span><br>20대 여성이 필로폰 투약 후 대한항공 비행 중 비상문 개방 시도로 체포되었습니다. 경찰은 여성의 마약 양성 반응 확인 후 조사 중이며, 승객이 승무원 지시 없이 비상문을 조작할 경우 최대 10년 징역형에 처할 수 있습니다.<br><br><span class="bold">개정안 제안 이유</span><br>승객이 마약 등을 투약한 상태에서 비상문을 조작하려고 시도하는 경우등에 대한 명확한 처벌규정이 없는 상태입니다. 이 때문에 마약 투약 후 비정상적 행동이 발생했을 때 적절한 처벌을 적용하는 데 어려움이 있습니다. 이 법안은 이러한 허점을 보완하고 항공 안전을 위협하는 행위에 대해 보다 체계적이고 엄격한 처벌 기준을 마련하려는 목적에서 제안되었습니다.'; // 텍스트 내용 설정
       textElementairplane.style.marginLeft = '10px'; // 이미지와 텍스트 간 간격 조정
 
       // 메시지 컨테이너에 텍스트 요소 추가
@@ -207,7 +207,7 @@ function buttonClickHandler(event) {
       // '현법률' 메시지 생성
       const firstMessageText3 = document.createElement('p');
       firstMessageText3.classList.add('chat-row-messege');
-      firstMessageText3.innerHTML = '<span class="bold">현법률</span>';
+      firstMessageText3.inner = '<span class="bold">현법률</span>';
       
       // '현법률' 메시지에 대한 줄바꿈들 생성 및 추가
       firstMessageText3.appendChild(document.createElement('br'));
@@ -229,7 +229,7 @@ function buttonClickHandler(event) {
       // '개정안' 메시지 생성 (바로 오른쪽에 위치)
       const secondMessageText3 = document.createElement('p');
       secondMessageText3.classList.add('chat-row-messege', 'second-message'); // 'second-message' 클래스 추가
-      secondMessageText3.innerHTML = "<span class='bold'>개정안</span>";
+      secondMessageText3.inner = "<span class='bold'>개정안</span>";
       
       // '현법률' 메시지에 대한 줄바꿈들 생성 및 추가
       secondMessageText3.appendChild(document.createElement('br'));
@@ -263,7 +263,7 @@ lawmakerBubbleContainer3.style.alignItems = 'flex-start'; // 내용을 왼쪽 �
 
 // '국회의원 모아보기' 제목 추가
 const lawmakerTitleText3 = document.createElement('p');
-lawmakerTitleText3.innerHTML = '<span class="bold">관련 국회의원 모아보기</span>';
+lawmakerTitleText3.inner = '<span class="bold">관련 국회의원 모아보기</span>';
 lawmakerBubbleContainer3.appendChild(lawmakerTitleText3);
 
 // 사진과 설명 추가
@@ -274,7 +274,7 @@ const items3 = [
 
 items3.forEach(item => {
   const itemLink3 = document.createElement('a');
-  itemLink3.href = item.link2;
+  itemLink3.href = item.link;
   itemLink3.target = '_blank';
   itemLink3.style.display = 'flex';
   itemLink3.style.alignItems = 'center';
@@ -331,7 +331,7 @@ chatScreen.appendChild(lawmakerMessageContainer3);
 
       // 텍스트 요소 생성 및 설정
       const textElementdog = document.createElement('span');
-      textElementdog.innerHTML = '<span class="bold">기사 요약</span><br>한 갈색 푸들이 주인에 의해 두 번 유기되었으며, 첫 번째 유기 후 보호소로부터 연락을 받은 주인이 인식 칩을 제거한 후 다시 버림받아 온라인 커뮤니티에서 공분을 사고 있습니다.<br><br><span class="bold">개정안 제안 이유</span><br>위 사건으로 인해 기존 동물보호법의 벌칙이 너무 가볍고 효과적이지 않다는 논란이 제기되고 있습니다. 이에 따라 동물학대 및 유기에 대한 처벌을 강화하고, 동물보호 인식을 높이기 위한 노력이 필요합니다. 이 모든 것을 구현하기 위해 동물보호법을 개정하고, 동물학대 및 유기에 대한 보다 가중된 처벌을 도입하는 것을 제안합니다.'; // 텍스트 내용 설정
+      textElementdog.inner = '<span class="bold">기사 요약</span><br>한 갈색 푸들이 주인에 의해 두 번 유기되었으며, 첫 번째 유기 후 보호소로부터 연락을 받은 주인이 인식 칩을 제거한 후 다시 버림받아 온라인 커뮤니티에서 공분을 사고 있습니다.<br><br><span class="bold">개정안 제안 이유</span><br>위 사건으로 인해 기존 동물보호법의 벌칙이 너무 가볍고 효과적이지 않다는 논란이 제기되고 있습니다. 이에 따라 동물학대 및 유기에 대한 처벌을 강화하고, 동물보호 인식을 높이기 위한 노력이 필요합니다. 이 모든 것을 구현하기 위해 동물보호법을 개정하고, 동물학대 및 유기에 대한 보다 가중된 처벌을 도입하는 것을 제안합니다.'; // 텍스트 내용 설정
       textElementdog.style.marginLeft = '10px'; // 이미지와 텍스트 간 간격 조정
 
       // 메시지 컨테이너에 텍스트 요소 추가
@@ -352,7 +352,7 @@ chatScreen.appendChild(lawmakerMessageContainer3);
       // '현법률' 메시지 생성
       const firstMessageText = document.createElement('p');
       firstMessageText.classList.add('chat-row-messege');
-      firstMessageText.innerHTML = '<span class="bold">현법률</span>';
+      firstMessageText.inner = '<span class="bold">현법률</span>';
 
       // '현법률' 메시지에 대한 줄바꿈들 생성 및 추가
       firstMessageText.appendChild(document.createElement('br'));
@@ -374,7 +374,7 @@ chatScreen.appendChild(lawmakerMessageContainer3);
       // '개정안' 메시지 생성 (바로 오른쪽에 위치)
       const secondMessageText = document.createElement('p');
       secondMessageText.classList.add('chat-row-messege', 'second-message'); // 'second-message' 클래스 추가
-      secondMessageText.innerHTML = "<span class='bold'>개정안</span>";
+      secondMessageText.inner = "<span class='bold'>개정안</span>";
 
       // '현법률' 메시지에 대한 줄바꿈들 생성 및 추가
       secondMessageText.appendChild(document.createElement('br'));
@@ -559,7 +559,7 @@ const items2 = [
 
 items2.forEach(item => {
   const itemLink2 = document.createElement('a');
-  itemLink2.href = item.link2;
+  itemLink2.href = item.link;
   itemLink2.target = '_blank';
   itemLink2.style.display = 'flex';
   itemLink2.style.alignItems = 'center';
